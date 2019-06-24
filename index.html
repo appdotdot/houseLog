@@ -1,94 +1,467 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-  <title>14幢1705问题整改</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <script type="text/javascript" src="jquery.js"></script>
-  <script type="text/javascript" src="helpman_settings.js"></script>
-  <script type="text/javascript" src="helpman_navigation.js"></script>
+﻿<!DOCTYPE HTML>
+<html><head>
+   <title>14幢1705问题整改</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2.5, user-scalable=yes" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta http-equiv="content-language" content="zh-cn" />
+   <meta name="description" content="&nbsp;" />   
+   <meta name="robots" content="noarchive,index,follow" />
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+html {
+	-webkit-text-size-adjust:none;
+	/* Prevent font scaling in landscape */
+}
+body {
+	background:#FFF;
+}
+html,body {
+	margin:0;
+	padding:0;
+}
+#headbar {
+	padding:3px 3px 0px 3px;
+	background-color:#87cefa;
+	height:28px;
+	margin:0;
+	background-image:url('spacer.gif');
+}
+#headbar img {
+	position:absolute;
+	top:3px;
+	right:3px;
+}
+#headbar h1.helpTitle {
+	position:absolute;
+	top:0;
+	left:0;
+	text-align:left;
+	white-space:nowrap;
+	font-family:Tahoma,Verdana,Helevetica,Sans-Serif;
+	color:#fff;
+	font-weight:bold;
+	font-size:12pt;
+	text-shadow:1px 1px 2px #888;
+	margin:0;
+	padding:3px 0 0 3px;
+}
+.navbar {
+	padding:3px;
+	background-color:#87cefa;
+	background-image:url('lines.gif');
+	border-style:solid;
+	border-color:#808080;
+	border-width:1px 0;
+	height:28px;
+	margin:0;
+}
+.navbar a {
+	color:black;
+	text-decoration:none;
+	outline:0;
+}
+.navbar a:visited {
+	color:black;
+	text-decoration:none;
+}
+.left {
+	float:left;
+	position:relative;
+}
+.right {
+	float:right;
+	position:relative;
+}
+.navbutton {
+	padding-bottom:2px;
+	border-bottom:2px solid transparent;
+}
+.activenav {
+	border-bottom:2px solid blue;
+}
+div#loadinggif {
+	display:none;
+	position:fixed;
+	margin:50% 50% 50% 50%;
+	z-index:1000;
+}
+.help {
+	font-family:Verdana,Tahoma,Arial,Sans-Serif;
+	font-size:8pt;
+	text-align:right;
+}
+.heading1 {
+	font-family:Arial,Helvetica;
+	font-weight:normal;
+	font-size:12pt;
+	color:#000000;
+	text-decoration:none;
+}
+.heading2 {
+	font-family:Arial,Helvetica;
+	font-weight:normal;
+	font-size:11pt;
+	color:#000000;
+	text-decoration:none;
+}
+.heading3 {
+	font-family:Arial,Helvetica;
+	font-weight:normal;
+	font-size:10pt;
+	color:#000000;
+	text-decoration:none;
+}
+.heading4 {
+	font-family:Arial,Helvetica;
+	font-weight:normal;
+	font-size:10pt;
+	color:#000000;
+	text-decoration:none;
+}
+.heading5 {
+	font-family:Arial,Helvetica;
+	font-weight:normal;
+	font-size:10pt;
+	color:#000000;
+	text-decoration:none;
+}
+.heading6 {
+	font-family:Arial,Helvetica;
+	font-weight:normal;
+	font-size:10pt;
+	color:#000000;
+	text-decoration:none;
+}
+.hilight1 {
+	font-family:Arial,Helvetica;
+	font-weight:normal;
+	font-size:12pt;
+	color:#FFFFFF;
+	background:#002682;
+	text-decoration:none;
+}
+.hilight2 {
+	font-family:Arial,Helvetica;
+	font-weight:normal;
+	font-size:11pt;
+	color:#FFFFFF;
+	background:#002682;
+	text-decoration:none;
+}
+.hilight3 {
+	font-family:Arial,Helvetica;
+	font-weight:normal;
+	font-size:10pt;
+	color:#FFFFFF;
+	background:#002682;
+	text-decoration:none;
+}
+.hilight4 {
+	font-family:Arial,Helvetica;
+	font-weight:normal;
+	font-size:10pt;
+	color:#FFFFFF;
+	background:#002682;
+	text-decoration:none;
+}
+.hilight5 {
+	font-family:Arial,Helvetica;
+	font-weight:normal;
+	font-size:10pt;
+	color:#FFFFFF;
+	background:#002682;
+	text-decoration:none;
+}
+.hilight6 {
+	font-family:Arial,Helvetica;
+	font-weight:normal;
+	font-size:10pt;
+	color:#FFFFFF;
+	background:#002682;
+	text-decoration: none;
+}
+/* TOC LIST CSS */
+#toc {
+	padding:0;
+	margin:0
+}
+#toc li {
+	margin-top:2px
+}
+#toc ul {
+	padding-left:0;
+	margin-left: 0
+}
+/* TOC LIST CSS */
+/* Page containers */
+div#pageWrapper {
+	visibility:hidden;
+	position:relative;
+	bottom:0;
+	left:0;
+	right:0;
+	padding:0px;
+	clear:both;
+}
+div.mainpage {
+	position:absolute;
+	top:35px;
+	left:0;
+	padding:4px;
+}
+div#contentsbox {
+	background-image:url('spacer.gif');
+}
+div#indexbox,div#topicbox,div#searchbox {
+	display: none;
+}
+/* Tap tables for data display */
+div#tapwrapper {
+	display:none;
+	position:absolute;
+	top:0;
+	left:0;
+	padding:10px;
+	background-color:#fff;
+	z-index:1000;
+}
+div.tapdiv {
+	width:80%;
+	margin:0 auto;
+	padding:5px;
+	border:2px solid #777;
+	background-color:#eee;
+	border-radius:5px;
+}
+div.tapcloser {
+	padding:5px;
+	width:auto;
+	margin:0 0 10px 0;
+	border:2px solid #404040;
+	background-color:red;
+	border-radius:5px;
+}
+p.tappara {
+	margin:0;
+	padding:0;
+	text-align:center;
+	font-family:Verdana, Tahoma, Helvetica, Sans-Serif;
+	font-weight:bold;
+	font-size:11pt;
+	color:#777;
+	font-variant:small-caps;
+}
+p.tapcloserpara {
+	padding:5px;
+	display:inline-block;
+	color:#fff;
+	text-align:left;
+	font-family:Verdana, Tahoma, Helvetica, Sans-Serif;
+	font-size:11pt;
+	font-weight:bold;
+	margin:0 0 10px 0;
+	border:2px solid #404040;
+	background-color:red;
+	border-radius: 5px;
+}
+/* Keyword index */
+#idx {
+	margin:0;
+	padding: 0 0 0 6px !important;
+}
+/* div tag that wraps the keyword index */
+#idx a {
+	color:#000;
+	text-decoration: none
+}
+/* all links in index appear as text */
+#idx p {
+	margin: 2px
+}
+/* keywords and secondary keywords */
+#idx p.idxkeyword2 {
+	margin-left: 20px
+}
+/* indentation for secondary keywords */
+table.idxtable {
+	position:absolute;
+	background:#F4F4F4;
+	border:1px solid #000000;
+	border-collapse:collapse;
+	-moz-box-shadow:2px 2px 2px #B0B0B0;
+	-webkit-box-shadow:2px 2px 2px #B0B0B0;
+	box-shadow:2px 2px 2px #B0B0B0;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=B0B0B0,Direction=135,Strength=4);
+}
+td.idxtable {
+	background: #F4F4F4
+}
+/* font definitions for keyword section,keywords and popup links */
+.idxsection {
+	font-family:Verdana,Tahoma,Arial,Helvetica;
+	font-weight:normal;
+	font-size:14pt;
+	color:#000000;
+	text-decoration:none;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+.idxkeyword {
+	font-family:Verdana,Tahoma,Arial,Helvetica;
+	font-weight:normal;
+	font-size:12pt;
+	color:#000000;
+	text-decoration:none;
+}
+.idxkeyword2 {
+	font-family:Verdana,Tahoma,Arial,Helvetica;
+	font-weight:normal;
+	font-size:12pt;
+	color:#000000;
+	text-decoration:none;
+}
+.idxlink {
+	font-family:Verdana,Tahoma,Arial,Helvetica;
+	font-weight:normal;
+	font-size:10pt;
+	color:#000000;
+	text-decoration: none;
+}
+   </style>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript"> 
+  var helpStyles = "default.css";
+  var hmHeadOffset = 0;
+  var pageLoadDelay = 0;
+	/* if Google CDN is down */
+	if(typeof jQuery == 'undefined') {
+	    pageLoadDelay = 300;
+		document.write("<script type=\"text/javascript\" src=\"jquery.js\"></"+"script>");
+	}
+</script>
+<script type="text/javascript" src="jquery.history.js"></script>
+<script type="text/javascript" src="jquery.scrollTomin.js"></script>
+<script type="text/javascript" src="jquery.touchSwipe.js"></script>
+<script type="text/javascript" src="helpman_settings.js"></script>
+<script type="text/javascript">
+// Global variables and setup
 
-  <link type="text/css" href="default.css" rel="stylesheet" />
+var viewportmeta;
+var hmhelptitle = "";
+var hmStylesheet = "default.css";
+var hmDefaultTopic = "2019224.htm";
+var hmCurrentTopic = "2019224.htm";
+var hmCurrentTopicLoaded = true;
+var hmTocFirst = true;
+var hmTocTouchLoad = true; 
+var hmShowTopic = true;
+var hmFadeTopic = false;
+var hmTopicUrl = false;
+var hmTocTapped = false;
+var hmBaseUrl = "http://www.ec-software.com/help/";
+var tapBarColor = "#eee";
+var tapTextColor = "#777";
+var tapBarText = "Tap to Display Table Data";
+var tapWinText = "14幢1705问题整改 Data";
+var tapWinCloseText = "Tap to Close and Return";
+var reDesk = "";
+var reMob = "";
+var reBerry = "";
+var reIpad = "";
+var swipeLength = 50;
+var hmLogo = false;
+var tapData;
 
-  <style type="text/css">
-    html,body { margin:0;padding:0;height:100%;overflow:hidden;
-    			       background:#C1E0FF;
-    }
-
-    #hmheadbox {
-      position: absolute;
-      left: 5px;
-      right: 5px;
-      top: 5px;
-      height: 60px;
-      background: #FFFFFF;
-      border: 1px solid #C0C0C0;
-      }
-
-    #hmheadbox p {
-      font-size: 160%;
-      font-weight: bold;
-      margin-top: 16px;
-      margin-left: 8px;
-     }
-
-    #hmnavbox {
-      position: absolute;
-      left: 5px;
-      width: 250px;
-      min-width: 50px;
-      top: 70px;
-      bottom: 5px;
-      border: 1px solid #C0C0C0;
-      }
-
-    #hmcontentbox {
-      position: absolute;
-      top: 70px;
-      right: 5px;
-      bottom: 5px;
-      left: 260px;
-      border: 1px solid #C0C0C0;
-      }
-
-    iframe {
-      position: absolute;left:0;top:0;width:100%;height:100%;border:none;
-      }
-  </style>
-
-  <script type="text/javascript">
-    $(document).ready(function(){
-      if (!hmSupportsAbspos()) {
-      	$(window).bind("resize", function() {
-      	  hmNoAbsposResize($("#hmheadbox"), true, false);
-      	  hmNoAbsposResize($("#hmnavbox"), false, true);
-      	  hmNoAbsposResize($("#hmcontentbox"), true, true);
-	    });
-	    $(window).trigger("resize");
-	  }
-      hmCreateVSplitter($("#hmnavbox"),$("#hmcontentbox"));
-    });
-  </script>
-
+/*! Premium Pack Version 2.10 Smartphone Skin JavaScript Functions
+    Copyright (c) 2011-2012 by Tim Green, all rights reserved
+	---------------------------------------------------------
+ * Includes jQuery Double Tap Plugin, version used here modified 
+ * for Help & Manual by Tim Green, original copyright (c) 2010 
+ * Raul Sanchez (http://www.sanraul.com)
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+*/
+var badPhone=false;var iOS,wp7,wp8,mobileOS,android,androidChrome,bberry,desktop,touchok;(function(){var d=navigator.userAgent.toLowerCase();var f=false;var g=false;var e=false;bberry=false;iOS=navigator.platform.indexOf("iPad")>-1||navigator.platform.indexOf("iPhone")>-1;e=navigator.platform.indexOf("iPad")>-1;var a=/Windows Phone.*?([\d]{1,1}).*? trident\/([\d]{1,1})/i;var c=a.exec(d);wp7=(c!=null&&c[1]>=7&&c[2]>=3);wp8=(c!=null&&c[1]>=8&&c[2]>=6);c=navigator.userAgent.match(/BlackBerry(.*?\(KHTML, like Gecko\) Version\/(\d)\.\d.\d.[\d]{1,4}.*?Mobile Safari)?/);if(c){if(c[1]==null||c[1]<6){badPhone="Sorry, you must be running BlackBerry OS 6 or higher to view this page.";f=true}else{if(c[1]>5){bberry=true}}}if((d.indexOf("series60")!=-1)||(d.indexOf("symbian")!=-1)||(d.indexOf("windows ce")!=-1)){badPhone="Sorry, your mobile phone browser is not compatible with this page.";g=true}var b=/Win32|Win64|MacIntel|MacPPC|Linux i686|X11/ig.test(navigator.platform)&&!wp7&&!wp8;mobileOS=typeof orientation!="undefined";touchok=((("ontouchstart" in document.documentElement)&&!b)||wp7||wp8);android=(d.indexOf("android")!=-1)||(!iOS&&!b&&!badPhone&&touchok&&mobileOS);androidChrome=(android&&d.indexOf("chrome/")!=-1);desktop=(b&&!(badPhone||mobileOS||touchok||wp7||iOS||android));if(desktop&&reDesk!=""){document.location.replace(reDesk)}if(g&&reMob!=""){document.location.replace(reMob)}if(f&&reBerry!=""){document.location.replace(reBerry)}if(e&&reIpad!=""){document.location.replace(reIpad)}if(!touchok&&!desktop){hmTocSingleClick=false;autocollapse=false;initialtocstate="expandall"}})();Array.prototype.findIndex=function(b){for(var a=0;a<this.length;a++){if(this[a]==b){return a}}return false};function wHorizontal(){return(Math.abs(window.orientation)-90===0)}function windowWidth(){if(iOS){return $(window).width()}else{return $(window).width()}}function doRetina(){if(window.devicePixelRatio>1.3){$("img[id^='RETINA_']").each(function(){$(this).attr("src",function(){return $(this).attr("src").replace(/\@lowres\./,"@hires.")})})}}(function(a){a.fn.doubletap=function(d,f,c){if(!touchok){return false}var b,e;c=c==null?500:c;b=(!wp7&&!wp8)?"touchend":"mouseup";c=(wp7||wp8)?1000:c;a(this).bind(b,function(i){var g=new Date().getTime();var h=a(this).data("lastTouch")||g+1;var j=g-h;clearTimeout(e);if(j<c&&j>120){if(d!=null&&typeof d=="function"){d(i)}}else{a(this).data("lastTouch",g);e=setTimeout(function(k){if(f!=null&&typeof f=="function"){f(k)}clearTimeout(e)},c,[i])}a(this).data("lastTouch",g)})}})(jQuery);function activeNav(){setTimeout(function(){$("div.mainpage").each(function(){if($(this).is(":visible")){$("img#"+$(this).attr("id")+"B").addClass("activenav")}else{$("img#"+$(this).attr("id")+"B").removeClass("activenav")}});pagePadding()},200)}function wipePage(c,a,d){var b=$(window).width();if(d=="right"){$(c).css({left:(-b+1)+"px"}).show().animate({left:"0px"},600);$(a).css({left:"0px"}).animate({left:(b+1)+"px"},600,function(){$(this).hide();activeNav()})}else{$(c).css({left:(b+1)+"px"}).show().animate({left:"0px"},600);$(a).css({left:"0px"}).animate({left:(-b+1)+"px"},600,function(){$(this).hide();activeNav()})}}function navSlide(c){if($(c).is(":visible")){return}var b="";var a=$("div.mainpage:visible");var e=$(a).attr("id");var d=$(c).attr("id");switch(e){case"contentsbox":b="left";break;case"indexbox":if(d=="contentsbox"){b="right"}else{b="left"}break;case"topicbox":b="right";break;case"searchbox":if(d=="topicbox"){b="left"}else{b="right"}break;default:void (0)}wipePage(c,a,b)}function doIndex(b,a){if($("#indexbox").children().length<1||!a){$("#indexbox").load(b,function(){navSlide("#indexbox")})}else{navSlide("#indexbox")}}function doSearch(){navSlide("#searchbox")}function hmInitHideLinks(b){var a=document.createElement("style");a.type="text/css";if(a.styleSheet){a.styleSheet.cssText=b}else{a.appendChild(document.createTextNode(b))}document.getElementsByTagName("head")[0].appendChild(a)}function hmshowLinks(a){var b=document.getElementById(a);canhidelinks=true;hmhideLinks();if(b){currentdiv=b;$(currentdiv).show();$(currentdiv).mouseover(hmdivMouseOver).mouseout(hmdivMouseOut);$(document).mouseup(hmhideLinks)}}function hmdivMouseOver(){canhidelinks=false}function hmdivMouseOut(){canhidelinks=true}function hmhideLinks(){if(canhidelinks){if(currentdiv){$(currentdiv).hide();$(currentdiv).unbind("onmouseover","onmouseout")}currentdiv=null;$(document).unbind("onmouseup")}}function pagePadding(){var a=$(".mainpage:visible");var b=$(window).height()-($(a).height()+$(".navbar").height()+$("#headbar").height());if(b>0){$(a).css("padding-bottom",b+"px")}else{$(a).css("padding-bottom","5px")}}function closeTap(a){$("div#tapwrapper").hide("300",function(){$(this).html("");window.scrollTo(0,a)})}function tapWindow(a,d){var e='<p onclick="closeTap('+d+');" class="tapcloserpara">'+tapWinCloseText+"</p>";$("div#tapwrapper").html(e+tapData[a]);var b=$("div#tapwrapper").outerHeight()+10;b=b>$(document).innerHeight()?b+"px":$(document).innerHeight()+10+"px";var c=$("table[id='"+a+"']").outerWidth();c=c>$("div#pageWrapper").outerWidth()?c+"px":$("div#pageWrapper").outerWidth()+"px";$("div#tapwrapper").css({height:b,width:c}).show("300",function(){window.scrollTo(0,0)})}function hmFixTitle(){var a=false;if(hmhelptitle==""){hmhelptitle=$("h1#maintitle").html()}$("h1#maintitle").html(hmhelptitle);if(hmLogo){while((($("h1#maintitle").width()+20)-$("img#hdlogo").position().left)>0){$("h1#maintitle").html($("h1#maintitle").html().substr(0,$("h1#maintitle").html().length-1));a=true}}else{while(($("span#titlewidth").width()+25)>$("div#headbar").innerWidth()){$("span#titlewidth").html($("span#titlewidth").html().substr(0,$("span#titlewidth").html().length-1));a=true}}if(a){$("h1#maintitle").html($("h1#maintitle").html().replace(/\s+$/g,"")+"&hellip;")}}jQuery(document).ready(function(a){setTimeout(function(){hmTopics=[];hmBadChapter=false;a("a[class^='heading']").each(function(){var n=a(this).attr("href");var o=/javascript\:/;if(!o.test(n)){hmTopics.push(n)}else{hmBadChapter=true}});a("div#loadinggif").hide().ajaxStart(function(){a(this).show()}).ajaxStop(function(){a(this).hide()});if(hmBadChapter){alert("WARNING:\n\nThis project contains chapters without text.\n\nChapterless TOC nodes do not work on touchscreen devices. You must convert all chapters without text to chapters with text (topics).");a("body").hide();return}if(hmDefaultTopic==""||!hmTopics.findIndex(hmDefaultTopic)){hmDefaultTopic=hmCurrentTopic=hmTopics[0]}var k=hmDefaultTopic.substr(hmDefaultTopic.lastIndexOf("."));if(desktop){a("html").css({"overflow-x":"auto","overflow-y":"scroll"})}if(!badPhone){a("div#pageWrapper").css("visibility","visible")}else{alert(badPhone)}a("div.mainpage").css({width:(a(window).width()-8)+"px",top:((a("div.navbar").outerHeight()+a("#headbar").outerHeight()-hmHeadOffset)+"px")});viewportmeta=document.querySelector('meta[name="viewport"]');if(touchok&&(wp7||wp8||bberry||androidChrome)){a("p#touchhelp").html("Slow double-tap<br />to show topic");a("body").doubletap(function(n){if(a("#topicbox").is(":visible")||a("#indexbox").is(":visible")){if(a("#topicbox").is(":visible")){wipePage(a("#contentsbox"),a("#topicbox"),"right")}else{wipePage(a("#contentsbox"),a("#indexbox"),"right")}}else{if(a("#contentsbox").is(":visible")){f()}else{void (0)}}},function(n){},1000)}if(iOS){var b=false;viewportmeta.content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no";a(window).bind("gesturestart",function(){clearTimeout(b);viewportmeta.content="width=device-width,minimum-scale=1.0,maximum-scale=2.5,initial-scale=1.0,user-scalable=yes"}).bind("touchend",function(){clearTimeout(b);b=setTimeout(function(){viewportmeta.content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no"},1000)})}if(touchok&&(iOS||android)&&!androidChrome){a("p#touchhelp").html("Swipe left to<br />show topic");var j={swipeLeft:g,swipeRight:e,threshold:swipeLength};a(function(){a("div.mainpage").swipe(j)});function e(n){if(a("#topicbox").is(":visible")){wipePage(a("#contentsbox"),a("#topicbox"),"right")}else{if(a("#indexbox").is(":visible")){wipePage(a("#contentsbox"),a("#indexbox"),"right")}}}function g(n){if(a("#contentsbox").is(":visible")||a("#indexbox").is(":visible")){f()}}}function f(){function n(){var o=setInterval(function(){if(hmCurrentTopicLoaded){clearInterval(o);navSlide("#topicbox")}},50)}if(touchok&&!hmCurrentTopicLoaded){hmShowTopic=false;a.history.load(d(hmCurrentTopic));n()}else{n()}}function m(o,p){var n="";var q="";if(location.hash!=""){hmTocFirst=false}if(o.indexOf("*")>-1){n=o.substr(o.indexOf("*")+1);q=o.substr(0,o.indexOf("*"))}else{q=o}a("#topicbox").load(q+k,function(){hmCurrentTopicLoaded=true;hmCurrentTopic=q+k;doRetina();if((p&&!hmFadeTopic&&!hmTocFirst)){navSlide("#topicbox")}else{if(hmFadeTopic){a("#topicbox").fadeIn(100);hmFadeTopic=false}else{a("#indexbox,#topicbox").hide();a("#contentsbox").show()}}hmTocFirst=false;activeNav();if(n!=""){var s=a("a#"+n);if(!s){s=a("a[name='"+n+"']")}if(s.length>0){a.scrollTo(a(s).position().top,600)}}var r=a("table[id^='TAPTABLE_']");tapData=[];r.each(function(){var u=iOS?"ontouchstart":"onclick";var t=a(this).attr("id");a(this).addClass("tapTables");tapData[t]=a(this).parent("div").html();a(this).hide();a(this).before('<div class="tapdiv" '+u+"=\"tapWindow('"+t+'\',$(document).scrollTop())"><p class="tappara">'+tapBarText+"</p></div>")});a("#topicbox img").not("table[id^='TAPTABLE'] img").each(function(){l(this,true)})})}function l(q,s){var o=parseInt(a(q).css("width"),10);var r=parseInt(a(q).css("height"),10);if(s){var t=o/r}else{var t=parseFloat(a(q).attr("resized"),10)}var p=0;var n;if(o>(a(window).width()-8)||!s){if(s){a(q).attr("width","").attr("height","").attr("resized",t)}if(a(q).nextAll("p").children("span.f_ImageCaption").length>0){n=a(q).parent("div").attr("style");if(n.indexOf("padding:")>-1){n=n.replace(/padding: /,"padding:");n=n.replace(/;$/,"").substr(n.indexOf("padding:")+8)}else{n=n.substr(n.indexOf("padding-top:"));n=n.replace(/(.*?)([\d]+?px)(;?)/g,"$2 ")}p=n.split(" ");p=parseInt(p[0],10)+parseInt(p[3],10);a(q).parent("div").css({width:(p+a(window).width()-15)+"px",padding:n})}a(q).css({width:(a(window).width()-(15+p))+"px",height:((a(window).width()-(15+p))/t)+"px"})}}function d(o){var n="";var p="";if(o.indexOf("#")>-1){n=o.substr(o.indexOf("#")+1);p=o.substr(0,o.indexOf("."));return p+"*"+n}else{return o.substr(0,o.indexOf("."))}}function c(n){if(a("#topicbox").is(":visible")){hmFadeTopic=true;a("#topicbox").fadeOut(100,function(){a.history.load(n)})}else{a.history.load(n)}}function i(n){n.css("opacity","0.4");setTimeout(function(){n.css("opacity","1")},300)}a.history.init(function(n){if(a("#indexbox").is(":visible")||a("#topicbox").is(":visible")||a("#searchbox").is(":visible")||!touchok){hmShowTopic=true}if(n==""){hmShowTopic=true;n=d(hmDefaultTopic);m(n,hmShowTopic)}else{m(n,hmShowTopic)}hmShowTopic=false});a("body").on("click","a:not([href^='javascript:'],[href^='http'],[class*='toggle'],[class^='heading'],[href='#'])",null,function(o){o.preventDefault();var n=d(a(this).attr("href"));if(n==d(hmCurrentTopic)&&!a("#topicbox").is(":visible")){f()}else{a.history.load(n)}return false});a("div#searchbox").on("click","a:not([href^='javascript:'])",null,function(p){p.preventDefault();var o=(a(this).attr("href").match(/q=http[s]??:\/\/(.*?)&/)[1]);var n=new RegExp(hmBaseUrl.replace(/http[s]??:\/\//g,""));if(n.test(o)){o=d(o.substr(o.lastIndexOf("/")+1));if(o==d(hmCurrentTopic)&&!a("#topicbox").is(":visible")){f()}else{a.history.load(o)}}else{window.open(a(this).attr("href"),"_blank")}return false});a("body").on("mousedown","div.tapdiv",null,function(n){a(this).css("background-color",tapTextColor).delay(300).css("background-color",tapBarColor);a(this).children("p").css("color",tapBarColor).delay(300).css("color",tapTextColor)});a("a[class^='heading']").bind("click",function(o){o.preventDefault();var p=a(this).attr("href");var n=(hmCurrentTopic!==p);hmCurrentTopic=p;hmTocTapped=true;if(touchok&&!hmTocTouchLoad){lazysync(p);hmCurrentTopicLoaded=false}else{lazysync(p);if(n){setTimeout(function(){a.history.load(d(p))},300)}}return false});a("body").on("click","img.arrow:not([data='0'])",null,function(o){o.preventDefault();var n=d(a(this).attr("data"));i(a(this));hmShowTopic=true;c(n);return false});a("img#topicboxB").click(function(){f();i(a(this))});a("img#contentsboxB").click(function(){navSlide("#contentsbox");i(a(this))});a("img#indexboxB").click(function(){doIndex("houselog_kwindex.htm",true);i(a(this))});a("img#searchboxB").click(function(){doSearch();i(a(this))});var h=("onorientationchange" in window)?"orientationchange":"resize";a(window).bind(h,function(){setTimeout(function(){a("#topicbox img[resized]").each(function(){l(this,false)});a("div.mainpage").css("width",(a(window).width()-8)+"px");pagePadding();hmFixTitle()},300)});pagePadding()},pageLoadDelay);hmFixTitle()});
+</script>  
+<script type="text/javascript" src="helpman_navigation.js"></script>
+<script type="text/javascript" src="helpman_topicinit.js"></script>
+   <script type="text/javascript">
+     function loadicons() { var icons = new Array(); for (i=0; i<arguments.length; i++) { icons[i] = new Image(); icons[i].src = arguments[i]; } }
+     function loadtoc() { loadstate(document.getElementById("toc")); }
+     function savetoc() { savestate(document.getElementById("toc")); }
+     function clicked(node, event) { deselect(); hmNodeClicked(node, event); }
+     function dblclicked(node) { hmNodeDblclicked(node); }
+     function deselect() { if (window.getSelection) window.getSelection().removeAllRanges(); else if (document.selection) document.selection.empty(); }
+     $(document).ready(function(){
+       loadtoc();
+       $(window).onunload = savetoc;
+     });
+   </script>
 </head>
 <body>
-<div id="hmheadbox">
-<p>14幢1705问题整改</p>
-</div>
-<div id="hmnavbox">
-  <iframe name="hmnavigation" id="hmnavigation" src="houselog_content.htm" seamless="seamless" title="Navigation Pane" frameborder="0"></iframe>
-</div>
+<div id="tapwrapper"></div>
+<noscript>
+<h1 style="padding-left: 5px;">JavaScript Disabled!</h1>
+<h4 style="padding-left: 5px;">Please enable JavaScript in your browser to view this documentation.</h4>
+</noscript>
+<div id="pageWrapper">
+<div id="loadinggif"><img src="loading.gif" id="hmgifloader" alt="loading indicator" width="32" height="32" border="0" /></div> 
+<div id="headbar">
 
-<div id="hmcontentbox" >
-  <script type="text/javascript">
-    var defaulttopic="2019224.htm";
-    if (location.href.lastIndexOf("?") > 0) defaulttopic=location.href.substring(location.href.lastIndexOf("?")+1,location.href.length).replace(/:/g,"");
-    document.write('<iframe name="hmcontent" id="hmcontent" src="'+defaulttopic+'" seamless="seamless" title="Content Page" frameborder="0"></iframe>');
-  </script>
-  <noscript>
-    <iframe name="hmcontent" id="hmcontent" src="2019224.htm" seamless="seamless" title="Content Page" frameborder="0"></iframe>
-  </noscript>
+<h1 class="helpTitle" id="maintitle" style="position: relative; margin-left: auto; margin-right: auto; text-align: center;"><span id="titlewidth">14幢1705问题整改</span></h1>
+</div> 
+<div class="navbar">
+<div class="left">
+<img src="home.png" id="contentsboxB" class="navbutton activenav" alt="Contents" width="24" height="24" border="0" />
+&nbsp;&nbsp;<img src="index.png" alt="Keyword Index" id="indexboxB" class="navbutton" width="24" height="24" border="0" />
+
+&nbsp;&nbsp;<img src="topic.png" id="topicboxB" class="navbutton" alt="Topic" width="24" height="24" border="0" />
+
 </div>
+<div class="right">
+<img src="prev.png" id="prvlink" class="navbutton arrow" onclick="void(0);" alt="Previous" width="24" height="24" border="0" />
+&nbsp;&nbsp;<img src="next.png" id="nxtlink" class="navbutton arrow" onclick="void(0);" alt="Next" width="24" height="24" border="0" />
+</div>
+</div>
+<div id="contentsbox" class="mainpage">
+<table style="width:100%; border-width: 0 0 1px 0; border-style: solid; border-color: silver; padding:0px; background-color:transparent; margin-bottom: 5px;">
+  <tr style="vertical-align:middle">
+    <td style="text-align:left;">
+    <h1 class="p_Heading1"><span class="f_Heading1">Contents</span></h1>
+    </td>
+    <td style="width: 40%; padding: 0;">
+    <p class="help" id="touchhelp"></p> 
+    </td>
+  </tr>
+</table> 
+  <ul id="toc" style="list-style-type:none;display:block;padding-left:0;margin:0">
+<li class="heading1" id="i1" style="background:url(cicon9.gif) no-repeat;margin-top:2px;margin-left:0;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a1" href="2019224.htm"><span class="heading1" id="s1">2019年2月24日</span></a>
+</li>
+<li class="heading1" id="i2" style="background:url(cicon9.gif) no-repeat;margin-top:2px;margin-left:0;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a2" href="2019226.htm"><span class="heading1" id="s2">2019年2月26日</span></a>
+</li>
+<li class="heading1" id="i3" style="background:url(cicon9.gif) no-repeat;margin-top:2px;margin-left:0;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a3" href="2019330.htm"><span class="heading1" id="s3">2019年3月30日</span></a>
+</li>
+<li class="heading1" id="i4" style="background:url(cicon9.gif) no-repeat;margin-top:2px;margin-left:0;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a4" href="2019427.htm"><span class="heading1" id="s4">2019年4月27日</span></a>
+</li>
+<li class="heading1" id="i5" style="background:url(cicon9.gif) no-repeat;margin-top:2px;margin-left:0;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a5" href="2019430.htm"><span class="heading1" id="s5">2019年4月30日</span></a>
+</li>
+<li class="heading1" id="i6" style="background:url(cicon9.gif) no-repeat;margin-top:2px;margin-left:0;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a6" href="2019518.htm"><span class="heading1" id="s6">2019年5月18日</span></a>
+</li>
+<li class="heading1" id="i7" style="background:url(cicon9.gif) no-repeat;margin-top:2px;margin-left:0;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a7" href="2019525.htm"><span class="heading1" id="s7">2019年5月25日</span></a>
+</li>
+<li class="heading1" id="i8" style="background:url(cicon9.gif) no-repeat;margin-top:2px;margin-left:0;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a8" href="2019610~11.htm"><span class="heading1" id="s8">2019年6月10日~11日</span></a>
+</li>
+<li class="heading1" id="i9" style="background:url(cicon9.gif) no-repeat;margin-top:2px;margin-left:0;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a9" href="2019619.htm"><span class="heading1" id="s9">2019年6月19日</span></a>
+</li>
+<li class="heading1" id="i10" style="background:url(cicon9.gif) no-repeat;margin-top:2px;margin-left:0;padding-left:20px" onclick="return clicked(this,event)"><a class="heading1" id="a10" href="2019622.htm"><span class="heading1" id="s10">2019年6月22日</span></a>
+</li>
+</ul>
+<script type="text/javascript">loadicons('cicon9.gif');</script>
+</div>
+<div id="topicbox" class="mainpage"></div>
+<div id="indexbox" class="mainpage"></div> 
+</div> <!-- pageWrapper --> 
 </body>
 </html>
-

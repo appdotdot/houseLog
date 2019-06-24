@@ -7,41 +7,41 @@
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <link type="text/css" href="default.css" rel="stylesheet" />
-   <style type="text/css">
-     body { margin: 0px; background: #FFFFFF; }
-   </style>
+   <script type="text/javascript">
+   // Redirect to main UI if topic file is opened directly
+   var cPath = window.location.pathname;
+    cPath = cPath.substr(cPath.lastIndexOf("/")+1,cPath.lastIndexOf(".htm")+5);
+    if (cPath == "2019619.htm") {
+    window.location.replace("index.html" + "#" + cPath.substr(0,cPath.lastIndexOf(".htm")))
+    }
+    // Track page view if GA is installed
+    if (gaaccount) _gaq.push(['_trackPageview', '2019619.htm']);
+   </script> 
    <script type="text/javascript" src="jquery.js"></script>
    <script type="text/javascript" src="helpman_settings.js"></script>
    <script type="text/javascript" src="helpman_topicinit.js"></script>
 
-   <script type="text/javascript">
-     HMSyncTOC("index.html", "2019619.htm");
-   </script>
-   <script type="text/javascript" src="highlight.js"></script>
-   <script type="text/javascript">
-     $(document).ready(function(){highlight();});
-   </script>
 </head>
 <body>
 
-
-<table style="width:100%; border:none; border-spacing:0px; padding:5px; background:#C0C0C0">
+<table id="topicheader" style="width:100%; border:none; border-spacing:0px; padding:0px; background-color:transparent; margin-bottom: 5px;">
   <tr style="vertical-align:middle">
-    <td style="text-align:left">
+    <td style="text-align:left; border-width: 0 0 1px 0; border-style: solid; border-color: silver;">
       <h1 class="p_Heading1"><span class="f_Heading1">2019年6月19日</span></h1>
 
     </td>
     <td style="text-align:right">
-     <a href="2019224.htm">Top</a>&nbsp;
-     <a href="2019610~11.htm">Previous</a>&nbsp;
-     <a href="2019622.htm">Next</a>
     </td>
   </tr>
 </table>
 
 
 <!-- Placeholder for topic body. -->
-<table style="width:100%;border:none;border-spacing:0px"><tr style="vertical-align:top"><td style="text-align:left;padding:5px">
+<div id="topicbody">
+<div style="background-color: #e3e3e3; border: 2px solid red; width:90%; margin: 3px">
+<p style="margin: 2px;"><b>HELP & MANUAL PREMIUM PACK TRIAL</b><br />This documentation was styled with a demo skin from the Premium Pack add-on for Help & Manual. <a href="http://www.ec-software.com/order.html" target="_blank">Purchase the full version of the Premium Pack</a> to get the configurable skins and remove this notice. </p>
+<p style="font-weight:bold; margin: 5px;">The full package includes 14 Classic skins for WebHelp and CHM, 14 new WebHelp skins, 8 new CHM skins, 8 new WebHelp skins for smartphones and a dedicated iPad skin.</p>
+</div>
 <p style="text-align: left; padding: 0px 0px 0px 13px; margin: 0px 0px 0px 0px;"><span style="font-size:10pt; font-family: 'Arial Unicode MS','Lucida Sans Unicode','Arial';color:#000000;display:inline-block;width:13px;margin-left:-13px">&#8226;</span>阁楼侧墙</p><p><img src="hmfile_hash_85f3f084.png" width="512" height="684" alt="IMG_20190619_阁楼侧墙_142544" style="border:none" /></p>
 <p>&nbsp;</p>
 <p><img src="hmfile_hash_9370dab1.png" width="512" height="383" alt="IMG_20190619_阁楼侧墙_142607" style="border:none" /></p>
@@ -60,7 +60,17 @@
 <p>&nbsp;</p>
 <p style="text-align: left; padding: 0px 0px 0px 13px; margin: 0px 0px 0px 0px;"><span style="font-size:10pt; font-family: 'Arial Unicode MS','Lucida Sans Unicode','Arial';color:#000000;display:inline-block;width:13px;margin-left:-13px">&#8226;</span>景观阳台</p><p><img src="hmfile_hash_f639e486.png" width="512" height="684" alt="IMG_20190619_景观阳台_141427" style="border:none" /></p>
 
-</td></tr></table>
-
+</div>
+<script type="text/javascript">
+    (function(){
+    var metaDes = "阁楼侧墙 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 阁楼线管 &nbsp; 厨房烟道 &nbsp; &nbsp; 景观阳台";
+    metaDes = metaDes.replace(/\'/g,"&apos;");
+    lazysync('2019619.htm');
+    if ($("meta[name='keywords']").length > 0) $("meta[name='keywords']").remove();
+    $('head').append('<meta name="keywords" content="" />');
+    if ($("meta[name='description']").length > 0) $("meta[name='description']").remove();
+    $('head').append('<meta name="description" content="'+metaDes+'" />');
+     })();
+</script>
 </body>
 </html>
